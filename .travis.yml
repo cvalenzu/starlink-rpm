@@ -1,0 +1,15 @@
+notifications:
+  email: false
+
+matrix:
+  include:
+    - sudo: required
+      services:
+        - docker
+      env: DOCKER_IMAGE=quay.io/pypa/manylinux1_x86_64
+      
+install:
+  - sudo docker pull $DOCKER_IMAGE
+
+script:
+  - sudo docker run --rm --name builder -v `pwd`:/pycupid-libs/ quay.io/pypa/manylinux1_x86_64 /pycupid-libs/build-rpm.sh

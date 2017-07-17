@@ -1,0 +1,6 @@
+SOURCES/starlink-*/*
+SOURCES/starlink-*
+BUILD/*
+BUILDROOT/*
+RPMS/*
+SRPMS/*
